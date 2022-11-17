@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+body, ul {
+    margin: 5px;
+    padding: 0px;
+    background-color: rgb(99, 76, 184);
+    }
+    a {
+    color: white;
+    text-decoration: none;    
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    #header  #menu a:hover {
+        background: rgba(0, 0, 0, 0.05);
+    }
+    #logo img {
+        float: left;
+        height: 60px;
+        position: relative;
+        top: 5px;
+        left: 10px;   
+    }
+    #header {
+        width: 100%;
+        position: fixed;
+        z-index: 90;
+        box-sizing: border-box;
+        height: 122px;
+        padding: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: darkslateblue;
+    }
+    #menu {
+        display: flex;
+        list-style: none;
+        gap: 0.5rem;
+        background: darkslateblue;
+    }
+    #btn-mobile {
+        display: none;
+    }
+    #carouselExampleInterval {
+        position: relative;
+        z-index: 10;
+        gap: 0.5rem;
+    }
+    #carouselExampleInterval img {
+        height: 1200px;
+        width: 630px;
+    }

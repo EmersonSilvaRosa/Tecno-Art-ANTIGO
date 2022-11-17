@@ -1,0 +1,31 @@
+body, ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+header img {
+    height: 120px;
+    position: relative;
+    top: 15px;
+    left: 10px;
+} 
+
+#menu {
+    display: flex;
+    list-style: none;
+    gap: 0.5em;  
+    right: auto ;  
+}
+
+header .li {
+    width: 100%;
+    position: relative;
+    z-index: 90;
+    box-sizing: border-box;
+    height: 180px;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #777;
+}
