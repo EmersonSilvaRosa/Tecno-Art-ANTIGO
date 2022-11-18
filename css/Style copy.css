@@ -1,14 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-
+/* Aula 27/09/2022 - Aplicando definições em CSS - projeto YourMusic */
 body, ul {
-    margin: 5px;
+    margin: 0px;
     padding: 0px;
-    background-color: rgb(99, 76, 184);
     }
     a {
-    color: white;
+    color: black;
     text-decoration: none;    
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: sans-serif;
     }
     #header  #menu a:hover {
         background: rgba(0, 0, 0, 0.05);
@@ -22,21 +20,20 @@ body, ul {
     }
     #header {
         width: 100%;
-        position: fixed;
+        position: fixed; /* Adicionando position e Z-index */ 
         z-index: 90;
         box-sizing: border-box;
-        height: 122px;
+        height: 90px;
         padding: 1rem;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        background: darkslateblue;
+        background: #e7e7e7;
     }
     #menu {
         display: flex;
         list-style: none;
         gap: 0.5rem;
-        background: darkslateblue;
     }
     #btn-mobile {
         display: none;
@@ -47,6 +44,195 @@ body, ul {
         gap: 0.5rem;
     }
     #carouselExampleInterval img {
-        height: 1200px;
-        width: 630px;
+        height: auto;
+    }
+    @media (max-width: 600px) {
+        #menu {
+            display: block;
+            position: absolute;
+            width: 15em;
+            top:70px;
+            right: 0px;
+            background: #e7e7e7;
+            transition: 0.6s;
+            z-index: 1000;
+            height: 0px;
+            padding-left: 5px;
+            visibility: hidden;
+            overflow-y: hidden;
+        }
+        #menu li {
+            padding-top: 30px;
+            padding-bottom: 0px;
+            margin: 0.1rem;
+            border-bottom: 2px solid rgb(0, 0, 0.05);
+        }
+        #nav.active #menu {
+            height: calc(100vh - 70px); /*em PX é o tamanho da FAIXA do MENU*/
+            visibility: visible;
+            overflow-y: hidden;
+        }
+        #btn-mobile {
+            display: flex;
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            cursor: pointer;
+            gap: 0.5rem;
+            border: none;
+        }
+        #hamburger {
+            border-top: 2px solid;
+            width: 25px;
+        }
+        #hamburger::after,
+        #hamburger::before {
+            content: '';
+            display: block;
+            width: 25px;
+            height: 2px;
+            background: currentColor;
+            margin-top: 5px;
+            transition: 0.3s;
+            position: relative;
+        }
+        #nav.active #hamburger {
+            border-top-color: transparent;
+        }
+        #nav.active #hamburger::before {
+            transform: rotate(135deg);
+        }
+        #nav.active #hamburger::after {
+            transform: rotate(-135deg);
+            top: -7px;
+        }
+    }
+    /* CSS configurando Banner */
+    .section-banner-home {
+        width: 100%;
+        height: 500px;
+        padding: 50px;
+        margin: 30px auto;
+        background-color: darkslateblue;
+    }
+    .section-banner-home img {
+        height: 400px;
+    }
+    .section-banner-home .texto-banner {
+        margin-top: 30px;
+        font-size: 22px;
+    }
+    .section-banner-home .texto-banner h1 {
+        font-size: 30px;
+        width: 60%;
+        font-weight: 500;
+        padding-bottom: 20px; /* Margem interna do texto */
+        color: #fff;
+    }
+    .section-banner-home .texto-banner p {
+        font-size: 18px;
+        margin-bottom: 20px; /* Margem externa abaixo do texto */
+        color: #fff;
+    }
+    .section-banner-home .texto-banner a {
+        color: #000;
+        text-decoration: none;
+        background-color: #fff;
+        padding: 4px 14px;
+        font-size: 15px;
+    }
+    /* CSS Destaque */
+    .destaque h2 {
+        text-align: center;
+        font-size: 24px;
+        font-weight: bold;
+    }
+    .destaque p {
+        width: 77%;
+        text-align: center;
+        font-size: 14px;
+        margin: 30px auto;
+    }
+    .destaque figcaption {
+        font-size: 13px;
+        color: #000;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    .destaque a {
+        justify-content: center;
+        display: flex;
+        text-decoration: none;
+        color: #30dcf4;
+        font-size: 18px;
+        font-weight: bold;
+        margin: 30px 0;
+    }
+    /* Fim CSS Destaque */
+    /*inicio CSS novidades*/
+    .novidades {
+        background-color: darkslateblue ;
+        padding: 50px;
+    }
+    .novidades .text-body {
+        width: 80%;
+        margin: 70px auto;
+    }
+    .novidades h2 {
+        color: #fff;
+    }
+    .novidades p {
+        color: #fff;
+    }
+    .novidades a {
+        color: #000;
+        text-decoration: underline;
+        text-decoration-color: violet;
+        padding: 6px;
+        background-color: #fff;
+        font-weight: 400;
+    }
+    /* fim CSS Novidades */
+    /* inicio CSS galeria */
+    .galeria {
+        margin: 60px auto 20px;
+    }
+    .galeria h2 {
+        text-align: center;
+        font-size: 24px;
+    }
+    .galeria p {
+        text-align: center;
+        width: 50%;
+        margin: 14px auto 50px;
+    }
+    .galeria .gallery {
+        width: 30%;
+        margin: 14px auto 50px;
+    }
+    /* Fim CSS Galeria */
+    /* inicio CSS Footer */
+    .rodape {
+        padding: 50px 50px 0;
+    }
+    .rodape .info-contato p {
+        margin: 0px;
+    }
+    .rodape a {
+        text-decoration: none;
+        color: #000;
+        font-size: 13px;
+    }
+    .rodape a:hover {
+        font-weight: bold;
+    }
+    .rodape .redes-sociais {
+        display: inline-block;
+    }
+    .rodape .redes-sociais img {
+        width: 45px;
+        height: 40px;
+    }
+    .rodape p.direitos {
+        text-align: center;
+        margin-top: 40px;
     }
